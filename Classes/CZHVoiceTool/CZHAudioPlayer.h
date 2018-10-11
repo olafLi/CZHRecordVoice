@@ -33,7 +33,7 @@
 ///代理
 @property (nonatomic, weak) id<CZHAudioPlayerDelegate> delegate;
 
-singtonInterface;
++ (instancetype)shareInstance;
 
 ///播放音频
 - (AVAudioPlayer *)czh_playAudioWith:(NSString *)audioPath;

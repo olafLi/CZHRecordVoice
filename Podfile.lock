@@ -1,0 +1,16 @@
+PODS:
+  - CCIRecordVoice (0.0.1)
+
+DEPENDENCIES:
+  - CCIRecordVoice (from `./CCIRecordVoice.podspec`)
+
+EXTERNAL SOURCES:
+  CCIRecordVoice:
+    :path: "./CCIRecordVoice.podspec"
+
+SPEC CHECKSUMS:
+  CCIRecordVoice: cbc1c04362623bc8e6eba810e78ffa350e0553df
+
+PODFILE CHECKSUM: 766b9c017348cbfdaa872acd8a1647d7cb4f6c25
+
+COCOAPODS: 1.5.3

@@ -12,6 +12,8 @@ static NSInteger const maxRecordTime = 60;
 
 #import "CZHRecordVoiceHUD.h"
 #import "CZHRecordTool.h"
+#import "CommonHeader.h"
+#import "UIView+Extention.h"
 
 @interface CZHRecordVoiceHUD ()
 

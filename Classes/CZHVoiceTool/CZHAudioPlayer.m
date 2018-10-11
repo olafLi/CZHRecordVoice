@@ -14,7 +14,14 @@
 
 @implementation CZHAudioPlayer
 
-singtonImplement(CZHAudioPlayer)
++(instancetype)shareInstance {
+    static CZHAudioPlayer * audioPlayer;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        audioPlayer = [[CZHAudioPlayer alloc]init];
+    });
+    return audioPlayer;
+}
 
 - (NSString *)localPath {
     return self.player.url.path;

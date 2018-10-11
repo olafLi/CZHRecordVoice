@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FCFE5BF230868B520A42687 /* Pods_CZHRecordVoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E3E3BC6CD63CD546F693F58 /* Pods_CZHRecordVoice.framework */; };
 		59CAA766213D3FCE003B3E40 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA765213D3FCE003B3E40 /* AppDelegate.m */; };
 		59CAA769213D3FCE003B3E40 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA768213D3FCE003B3E40 /* ViewController.m */; };
 		59CAA76E213D3FD0003B3E40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59CAA76D213D3FD0003B3E40 /* Assets.xcassets */; };
@@ -14,13 +15,6 @@
 		59CAA774213D3FD0003B3E40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA773213D3FD0003B3E40 /* main.m */; };
 		59CAA77E213D3FD0003B3E40 /* CZHRecordVoiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA77D213D3FD0003B3E40 /* CZHRecordVoiceTests.m */; };
 		59CAA789213D3FD0003B3E40 /* CZHRecordVoiceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA788213D3FD0003B3E40 /* CZHRecordVoiceUITests.m */; };
-		59CAA7A5213D420F003B3E40 /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59CAA7A2213D420F003B3E40 /* libopencore-amrwb.a */; };
-		59CAA7A6213D420F003B3E40 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59CAA7A3213D420F003B3E40 /* libopencore-amrnb.a */; };
-		59CAA7A7213D420F003B3E40 /* amrFileCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA7A4213D420F003B3E40 /* amrFileCodec.m */; };
-		59CAA7AC213D4270003B3E40 /* CZHRecordVoiceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA7AB213D4270003B3E40 /* CZHRecordVoiceButton.m */; };
-		59CAA7B0213D505C003B3E40 /* UIView+Extention.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA7AF213D505C003B3E40 /* UIView+Extention.m */; };
-		59CAA7B4213D539D003B3E40 /* CZHRecordVoiceHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA7B3213D539D003B3E40 /* CZHRecordVoiceHUD.m */; };
-		59CAA7B7213D5A8D003B3E40 /* CZHFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA7B6213D5A8D003B3E40 /* CZHFileManager.m */; };
 		59CAA7E0213D5C89003B3E40 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59CAA7BA213D5C89003B3E40 /* icon.bundle */; };
 		59CAA7E1213D5C89003B3E40 /* NBLFileExplorer.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA7BB213D5C89003B3E40 /* NBLFileExplorer.m */; };
 		59CAA7E2213D5C89003B3E40 /* NBLFileOperationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA7BE213D5C89003B3E40 /* NBLFileOperationInfo.m */; };
@@ -39,12 +33,6 @@
 		59CAA7EF213D5C89003B3E40 /* NBLFileTypeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA7DA213D5C89003B3E40 /* NBLFileTypeManager.m */; };
 		59CAA7F0213D5C89003B3E40 /* NBLFileMenuTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA7DD213D5C89003B3E40 /* NBLFileMenuTool.m */; };
 		59CAA7F1213D5C89003B3E40 /* NBLFileSortTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA7DF213D5C89003B3E40 /* NBLFileSortTool.m */; };
-		59CAA7F4213D5E24003B3E40 /* CZHRecordTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA7F3213D5E24003B3E40 /* CZHRecordTool.m */; };
-		59CAA7F7213E3A2A003B3E40 /* CZHAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA7F6213E3A2A003B3E40 /* CZHAudioPlayer.m */; };
-		59CAA7FA213E4055003B3E40 /* CZHAvRelationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA7F9213E4055003B3E40 /* CZHAvRelationTool.m */; };
-		F16B3618216F210600B11859 /* UIViewController+CBPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = F16B3617216F210600B11859 /* UIViewController+CBPopup.m */; };
-		F16B361B216F226D00B11859 /* CZHRecordVoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16B3619216F226D00B11859 /* CZHRecordVoiceViewController.swift */; };
-		F16B361C216F226D00B11859 /* CZHRecordVoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F16B361A216F226D00B11859 /* CZHRecordVoiceViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,23 +68,7 @@
 		59CAA784213D3FD0003B3E40 /* CZHRecordVoiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CZHRecordVoiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59CAA788213D3FD0003B3E40 /* CZHRecordVoiceUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZHRecordVoiceUITests.m; sourceTree = "<group>"; };
 		59CAA78A213D3FD0003B3E40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		59CAA799213D420F003B3E40 /* amrFileCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amrFileCodec.h; sourceTree = "<group>"; };
-		59CAA79C213D420F003B3E40 /* if_rom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = if_rom.h; sourceTree = "<group>"; };
-		59CAA79D213D420F003B3E40 /* dec_if.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dec_if.h; sourceTree = "<group>"; };
-		59CAA79F213D420F003B3E40 /* interf_dec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_dec.h; sourceTree = "<group>"; };
-		59CAA7A0213D420F003B3E40 /* interf_enc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_enc.h; sourceTree = "<group>"; };
-		59CAA7A2213D420F003B3E40 /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
-		59CAA7A3213D420F003B3E40 /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
-		59CAA7A4213D420F003B3E40 /* amrFileCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = amrFileCodec.m; sourceTree = "<group>"; };
-		59CAA7AA213D4270003B3E40 /* CZHRecordVoiceButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZHRecordVoiceButton.h; sourceTree = "<group>"; };
-		59CAA7AB213D4270003B3E40 /* CZHRecordVoiceButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZHRecordVoiceButton.m; sourceTree = "<group>"; };
-		59CAA7AE213D505C003B3E40 /* UIView+Extention.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Extention.h"; sourceTree = "<group>"; };
-		59CAA7AF213D505C003B3E40 /* UIView+Extention.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extention.m"; sourceTree = "<group>"; tabWidth = 5; };
 		59CAA7B1213D5107003B3E40 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		59CAA7B2213D539D003B3E40 /* CZHRecordVoiceHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZHRecordVoiceHUD.h; sourceTree = "<group>"; };
-		59CAA7B3213D539D003B3E40 /* CZHRecordVoiceHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZHRecordVoiceHUD.m; sourceTree = "<group>"; };
-		59CAA7B5213D5A8D003B3E40 /* CZHFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZHFileManager.h; sourceTree = "<group>"; };
-		59CAA7B6213D5A8D003B3E40 /* CZHFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZHFileManager.m; sourceTree = "<group>"; };
 		59CAA7B9213D5C89003B3E40 /* NBLFileExplorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBLFileExplorer.h; sourceTree = "<group>"; };
 		59CAA7BA213D5C89003B3E40 /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = icon.bundle; sourceTree = "<group>"; };
 		59CAA7BB213D5C89003B3E40 /* NBLFileExplorer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBLFileExplorer.m; sourceTree = "<group>"; };
@@ -132,17 +104,10 @@
 		59CAA7DD213D5C89003B3E40 /* NBLFileMenuTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBLFileMenuTool.m; sourceTree = "<group>"; };
 		59CAA7DE213D5C89003B3E40 /* NBLFileTypeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBLFileTypeManager.h; sourceTree = "<group>"; };
 		59CAA7DF213D5C89003B3E40 /* NBLFileSortTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBLFileSortTool.m; sourceTree = "<group>"; };
-		59CAA7F2213D5E24003B3E40 /* CZHRecordTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZHRecordTool.h; sourceTree = "<group>"; };
-		59CAA7F3213D5E24003B3E40 /* CZHRecordTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZHRecordTool.m; sourceTree = "<group>"; };
-		59CAA7F5213E3A2A003B3E40 /* CZHAudioPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZHAudioPlayer.h; sourceTree = "<group>"; };
-		59CAA7F6213E3A2A003B3E40 /* CZHAudioPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZHAudioPlayer.m; sourceTree = "<group>"; };
-		59CAA7F8213E4055003B3E40 /* CZHAvRelationTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZHAvRelationTool.h; sourceTree = "<group>"; };
-		59CAA7F9213E4055003B3E40 /* CZHAvRelationTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZHAvRelationTool.m; sourceTree = "<group>"; };
+		884EE091C8602638290A379F /* Pods-CZHRecordVoice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CZHRecordVoice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CZHRecordVoice/Pods-CZHRecordVoice.debug.xcconfig"; sourceTree = "<group>"; };
+		9E3E3BC6CD63CD546F693F58 /* Pods_CZHRecordVoice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CZHRecordVoice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F16B3612216F1C6700B11859 /* CZHRecordVoice-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CZHRecordVoice-Bridging-Header.h"; sourceTree = "<group>"; };
-		F16B3616216F210600B11859 /* UIViewController+CBPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CBPopup.h"; sourceTree = "<group>"; };
-		F16B3617216F210600B11859 /* UIViewController+CBPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CBPopup.m"; sourceTree = "<group>"; };
-		F16B3619216F226D00B11859 /* CZHRecordVoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZHRecordVoiceViewController.swift; sourceTree = "<group>"; };
-		F16B361A216F226D00B11859 /* CZHRecordVoiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CZHRecordVoiceViewController.xib; sourceTree = "<group>"; };
+		FFDDBD12A00915D3FCDE8A59 /* Pods-CZHRecordVoice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CZHRecordVoice.release.xcconfig"; path = "Pods/Target Support Files/Pods-CZHRecordVoice/Pods-CZHRecordVoice.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,8 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59CAA7A5213D420F003B3E40 /* libopencore-amrwb.a in Frameworks */,
-				59CAA7A6213D420F003B3E40 /* libopencore-amrnb.a in Frameworks */,
+				3FCFE5BF230868B520A42687 /* Pods_CZHRecordVoice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +143,8 @@
 				59CAA77C213D3FD0003B3E40 /* CZHRecordVoiceTests */,
 				59CAA787213D3FD0003B3E40 /* CZHRecordVoiceUITests */,
 				59CAA762213D3FCE003B3E40 /* Products */,
+				8A4B7D8BBCE8F0994D64D18D /* Pods */,
+				BE592D522834A32BCDCFDF02 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -195,10 +161,7 @@
 		59CAA763213D3FCE003B3E40 /* CZHRecordVoice */ = {
 			isa = PBXGroup;
 			children = (
-				F16B3615216F210600B11859 /* CBPopup */,
 				59CAA7B8213D5C89003B3E40 /* NBLFileExplorer */,
-				59CAA7AD213D5037003B3E40 /* Category */,
-				59CAA797213D420F003B3E40 /* 音频处理 */,
 				59CAA764213D3FCE003B3E40 /* AppDelegate.h */,
 				59CAA765213D3FCE003B3E40 /* AppDelegate.m */,
 				59CAA767213D3FCE003B3E40 /* ViewController.h */,
@@ -229,100 +192,6 @@
 				59CAA78A213D3FD0003B3E40 /* Info.plist */,
 			);
 			path = CZHRecordVoiceUITests;
-			sourceTree = "<group>";
-		};
-		59CAA797213D420F003B3E40 /* 音频处理 */ = {
-			isa = PBXGroup;
-			children = (
-				59CAA7A9213D4242003B3E40 /* CZHVoiceTool */,
-				59CAA7A8213D4242003B3E40 /* CZHVoIceView */,
-				59CAA798213D420F003B3E40 /* AMR */,
-			);
-			path = "音频处理";
-			sourceTree = "<group>";
-		};
-		59CAA798213D420F003B3E40 /* AMR */ = {
-			isa = PBXGroup;
-			children = (
-				59CAA799213D420F003B3E40 /* amrFileCodec.h */,
-				59CAA79A213D420F003B3E40 /* include */,
-				59CAA7A1213D420F003B3E40 /* lib */,
-				59CAA7A4213D420F003B3E40 /* amrFileCodec.m */,
-			);
-			path = AMR;
-			sourceTree = "<group>";
-		};
-		59CAA79A213D420F003B3E40 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				59CAA79B213D420F003B3E40 /* opencore-amrwb */,
-				59CAA79E213D420F003B3E40 /* opencore-amrnb */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		59CAA79B213D420F003B3E40 /* opencore-amrwb */ = {
-			isa = PBXGroup;
-			children = (
-				59CAA79C213D420F003B3E40 /* if_rom.h */,
-				59CAA79D213D420F003B3E40 /* dec_if.h */,
-			);
-			path = "opencore-amrwb";
-			sourceTree = "<group>";
-		};
-		59CAA79E213D420F003B3E40 /* opencore-amrnb */ = {
-			isa = PBXGroup;
-			children = (
-				59CAA79F213D420F003B3E40 /* interf_dec.h */,
-				59CAA7A0213D420F003B3E40 /* interf_enc.h */,
-			);
-			path = "opencore-amrnb";
-			sourceTree = "<group>";
-		};
-		59CAA7A1213D420F003B3E40 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				59CAA7A2213D420F003B3E40 /* libopencore-amrwb.a */,
-				59CAA7A3213D420F003B3E40 /* libopencore-amrnb.a */,
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
-		59CAA7A8213D4242003B3E40 /* CZHVoIceView */ = {
-			isa = PBXGroup;
-			children = (
-				F16B3619216F226D00B11859 /* CZHRecordVoiceViewController.swift */,
-				F16B361A216F226D00B11859 /* CZHRecordVoiceViewController.xib */,
-				59CAA7AA213D4270003B3E40 /* CZHRecordVoiceButton.h */,
-				59CAA7AB213D4270003B3E40 /* CZHRecordVoiceButton.m */,
-				59CAA7B2213D539D003B3E40 /* CZHRecordVoiceHUD.h */,
-				59CAA7B3213D539D003B3E40 /* CZHRecordVoiceHUD.m */,
-			);
-			path = CZHVoIceView;
-			sourceTree = "<group>";
-		};
-		59CAA7A9213D4242003B3E40 /* CZHVoiceTool */ = {
-			isa = PBXGroup;
-			children = (
-				59CAA7B5213D5A8D003B3E40 /* CZHFileManager.h */,
-				59CAA7B6213D5A8D003B3E40 /* CZHFileManager.m */,
-				59CAA7F2213D5E24003B3E40 /* CZHRecordTool.h */,
-				59CAA7F3213D5E24003B3E40 /* CZHRecordTool.m */,
-				59CAA7F5213E3A2A003B3E40 /* CZHAudioPlayer.h */,
-				59CAA7F6213E3A2A003B3E40 /* CZHAudioPlayer.m */,
-				59CAA7F8213E4055003B3E40 /* CZHAvRelationTool.h */,
-				59CAA7F9213E4055003B3E40 /* CZHAvRelationTool.m */,
-			);
-			path = CZHVoiceTool;
-			sourceTree = "<group>";
-		};
-		59CAA7AD213D5037003B3E40 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				59CAA7AE213D505C003B3E40 /* UIView+Extention.h */,
-				59CAA7AF213D505C003B3E40 /* UIView+Extention.m */,
-			);
-			path = Category;
 			sourceTree = "<group>";
 		};
 		59CAA7B8213D5C89003B3E40 /* NBLFileExplorer */ = {
@@ -399,13 +268,21 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
-		F16B3615216F210600B11859 /* CBPopup */ = {
+		8A4B7D8BBCE8F0994D64D18D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F16B3616216F210600B11859 /* UIViewController+CBPopup.h */,
-				F16B3617216F210600B11859 /* UIViewController+CBPopup.m */,
+				884EE091C8602638290A379F /* Pods-CZHRecordVoice.debug.xcconfig */,
+				FFDDBD12A00915D3FCDE8A59 /* Pods-CZHRecordVoice.release.xcconfig */,
 			);
-			path = CBPopup;
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BE592D522834A32BCDCFDF02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E3E3BC6CD63CD546F693F58 /* Pods_CZHRecordVoice.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,9 +292,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59CAA78D213D3FD0003B3E40 /* Build configuration list for PBXNativeTarget "CZHRecordVoice" */;
 			buildPhases = (
+				3FA67209CDA6A6798AD15B9E /* [CP] Check Pods Manifest.lock */,
 				59CAA75D213D3FCE003B3E40 /* Sources */,
 				59CAA75E213D3FCE003B3E40 /* Frameworks */,
 				59CAA75F213D3FCE003B3E40 /* Resources */,
+				E79454E899CBDA18BA509EDA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -513,7 +392,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F16B361C216F226D00B11859 /* CZHRecordVoiceViewController.xib in Resources */,
 				59CAA771213D3FD0003B3E40 /* LaunchScreen.storyboard in Resources */,
 				59CAA76E213D3FD0003B3E40 /* Assets.xcassets in Resources */,
 				59CAA7E0213D5C89003B3E40 /* icon.bundle in Resources */,
@@ -536,41 +414,78 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3FA67209CDA6A6798AD15B9E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CZHRecordVoice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E79454E899CBDA18BA509EDA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CZHRecordVoice/Pods-CZHRecordVoice-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CCIRecordVoice/CCIRecordVoice.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCIRecordVoice.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CZHRecordVoice/Pods-CZHRecordVoice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		59CAA75D213D3FCE003B3E40 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59CAA7F4213D5E24003B3E40 /* CZHRecordTool.m in Sources */,
 				59CAA7EB213D5C89003B3E40 /* NBLFileOperationItemCell.m in Sources */,
 				59CAA7EF213D5C89003B3E40 /* NBLFileTypeManager.m in Sources */,
 				59CAA7E6213D5C89003B3E40 /* NBLFileGalleryItemCell.m in Sources */,
 				59CAA7E5213D5C89003B3E40 /* NBLFileInfo.m in Sources */,
 				59CAA7EE213D5C89003B3E40 /* NBLFileListViewController.m in Sources */,
 				59CAA7F1213D5C89003B3E40 /* NBLFileSortTool.m in Sources */,
-				F16B3618216F210600B11859 /* UIViewController+CBPopup.m in Sources */,
-				59CAA7F7213E3A2A003B3E40 /* CZHAudioPlayer.m in Sources */,
 				59CAA7EA213D5C89003B3E40 /* NBLEditGalleryView.m in Sources */,
 				59CAA769213D3FCE003B3E40 /* ViewController.m in Sources */,
-				59CAA7FA213E4055003B3E40 /* CZHAvRelationTool.m in Sources */,
 				59CAA7E9213D5C89003B3E40 /* NBLEditGalleryItemCell.m in Sources */,
 				59CAA7E8213D5C89003B3E40 /* NBLFileOperationMenu.m in Sources */,
-				59CAA7B0213D505C003B3E40 /* UIView+Extention.m in Sources */,
 				59CAA7E1213D5C89003B3E40 /* NBLFileExplorer.m in Sources */,
 				59CAA7F0213D5C89003B3E40 /* NBLFileMenuTool.m in Sources */,
 				59CAA7E3213D5C89003B3E40 /* NBLSortOperationInfo.m in Sources */,
-				59CAA7B4213D539D003B3E40 /* CZHRecordVoiceHUD.m in Sources */,
 				59CAA7ED213D5C89003B3E40 /* NBLFileListShowViewController.m in Sources */,
 				59CAA7EC213D5C89003B3E40 /* NBLFileItemCell.m in Sources */,
 				59CAA7E2213D5C89003B3E40 /* NBLFileOperationInfo.m in Sources */,
-				59CAA7B7213D5A8D003B3E40 /* CZHFileManager.m in Sources */,
 				59CAA7E7213D5C89003B3E40 /* NBLFileGalleryView.m in Sources */,
 				59CAA774213D3FD0003B3E40 /* main.m in Sources */,
-				F16B361B216F226D00B11859 /* CZHRecordVoiceViewController.swift in Sources */,
 				59CAA766213D3FCE003B3E40 /* AppDelegate.m in Sources */,
-				59CAA7AC213D4270003B3E40 /* CZHRecordVoiceButton.m in Sources */,
 				59CAA7E4213D5C89003B3E40 /* NBLEditInfo.m in Sources */,
-				59CAA7A7213D420F003B3E40 /* amrFileCodec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,6 +644,7 @@
 		};
 		59CAA78E213D3FD0003B3E40 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 884EE091C8602638290A379F /* Pods-CZHRecordVoice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -742,10 +658,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/CZHRecordVoice/音频处理/AMR/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = qianqun.CZHRecordVoice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CZHRecordVoice/CZHRecordVoice-Bridging-Header.h";
@@ -757,6 +670,7 @@
 		};
 		59CAA78F213D3FD0003B3E40 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFDDBD12A00915D3FCDE8A59 /* Pods-CZHRecordVoice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -770,10 +684,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/CZHRecordVoice/音频处理/AMR/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = qianqun.CZHRecordVoice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CZHRecordVoice/CZHRecordVoice-Bridging-Header.h";
@@ -785,7 +696,6 @@
 		59CAA791213D3FD0003B3E40 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CZHRecordVoiceTests/Info.plist;
@@ -804,7 +714,6 @@
 		59CAA792213D3FD0003B3E40 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CZHRecordVoiceTests/Info.plist;
@@ -823,7 +732,6 @@
 		59CAA794213D3FD0003B3E40 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CZHRecordVoiceUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -841,7 +749,6 @@
 		59CAA795213D3FD0003B3E40 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CZHRecordVoiceUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

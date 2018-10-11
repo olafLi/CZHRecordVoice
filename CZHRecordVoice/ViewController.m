@@ -13,24 +13,25 @@ typedef NS_ENUM(NSInteger, ViewControllerButtonType) {
 };
 
 #import "ViewController.h"
-#import "CZHRecordVoiceButton.h"
 #import "NBLFileExplorer.h"
-#import "CZHFileManager.h"
-#import "CZHAudioPlayer.h"
-#import "CZHAvRelationTool.h"
+//#import "CZHFileManager.h"
+//#import "CZHAudioPlayer.h"
+//#import "CZHAvRelationTool.h"
 #import "AppDelegate.h"
-#import "UIViewController+CBPopup.h"
-
-#import "CZHRecordVoice-Swift.h"
+#import <CCIRecordVoice/UIViewController+CBPopup.h>
+#import <CCIRecordVoice/CCIRecordVoice-Swift.h>
+#import <CCIRecordVoice/CZHAudioPlayer.h>
+#import <CCIRecordVoice/CZHAvRelationTool.h>
+#import <CCIRecordVoice/CZHFileManager.h>
 
 //
 
 @interface ViewController ()<CZHAudioPlayerDelegate,CZHRecordVoiceViewDelegate>
-///<#注释#>
+
 @property (nonatomic, weak) UIButton *playButton;
-///<#注释#>
+
 @property (nonatomic, weak) UIButton *deleteButton;
-///<#注释#>
+
 @property (nonatomic, copy) NSString *audioLocalPath;
 @end
 
@@ -48,14 +49,7 @@ typedef NS_ENUM(NSInteger, ViewControllerButtonType) {
 
 -(void)showAction:(UIButton *)button {
 
-//    CZHRecordVoiceButton *recordButton = [[CZHRecordVoiceButton alloc] init];
-//    recordButton.backgroundColor = UIColor.grayColor;
-//    recordButton.center = self.view.center;
-//    recordButton.czh_width = self.view.czh_width * 0.8;
-//    recordButton.czh_height = 300;
-//    recordButton.delegate = self;
-
-    CZHRecordVoiceViewController * voiceRecordViewController = [[CZHRecordVoiceViewController alloc]init];
+    CZHRecordVoiceViewController * voiceRecordViewController = [[CZHRecordVoiceViewController alloc] initWithNibName:@"CZHRecordVoiceViewController" bundle:[NSBundle bundleForClass:[CZHRecordVoiceViewController class]]];
     voiceRecordViewController.delegate = self;
     [voiceRecordViewController showIn:self];
 

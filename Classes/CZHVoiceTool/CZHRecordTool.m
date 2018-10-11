@@ -18,7 +18,14 @@
 
 @implementation CZHRecordTool
 
-singtonImplement(CZHRecordTool)
++ (instancetype)shareInstance {
+    static CZHRecordTool *_shareInstance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _shareInstance = [[CZHRecordTool alloc] init];
+    });
+    return _shareInstance;
+}
 
 - (BOOL)initAudioRecorder
 {

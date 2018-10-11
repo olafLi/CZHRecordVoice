@@ -45,7 +45,7 @@ public class CZHRecordVoiceViewController: UIViewController {
     }
 
     @objc
-    func show(in viewController: UIViewController) {
+    public func show(in viewController: UIViewController) {
         self.view.frame = CGRect(x: 0, y: 0, width: 300, height: 250)
         viewController.cb_presentPopupViewController(self)
         self.playVoiceRecord()
