@@ -42,6 +42,10 @@
 		59CAA7F4213D5E24003B3E40 /* CZHRecordTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA7F3213D5E24003B3E40 /* CZHRecordTool.m */; };
 		59CAA7F7213E3A2A003B3E40 /* CZHAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA7F6213E3A2A003B3E40 /* CZHAudioPlayer.m */; };
 		59CAA7FA213E4055003B3E40 /* CZHAvRelationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA7F9213E4055003B3E40 /* CZHAvRelationTool.m */; };
+		F16B3614216F1C6700B11859 /* CZHRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16B3613216F1C6700B11859 /* CZHRecordView.swift */; };
+		F16B3618216F210600B11859 /* UIViewController+CBPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = F16B3617216F210600B11859 /* UIViewController+CBPopup.m */; };
+		F16B361B216F226D00B11859 /* CZHRecordVoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16B3619216F226D00B11859 /* CZHRecordVoiceViewController.swift */; };
+		F16B361C216F226D00B11859 /* CZHRecordVoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F16B361A216F226D00B11859 /* CZHRecordVoiceViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +139,12 @@
 		59CAA7F6213E3A2A003B3E40 /* CZHAudioPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZHAudioPlayer.m; sourceTree = "<group>"; };
 		59CAA7F8213E4055003B3E40 /* CZHAvRelationTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZHAvRelationTool.h; sourceTree = "<group>"; };
 		59CAA7F9213E4055003B3E40 /* CZHAvRelationTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZHAvRelationTool.m; sourceTree = "<group>"; };
+		F16B3612216F1C6700B11859 /* CZHRecordVoice-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CZHRecordVoice-Bridging-Header.h"; sourceTree = "<group>"; };
+		F16B3613216F1C6700B11859 /* CZHRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZHRecordView.swift; sourceTree = "<group>"; };
+		F16B3616216F210600B11859 /* UIViewController+CBPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CBPopup.h"; sourceTree = "<group>"; };
+		F16B3617216F210600B11859 /* UIViewController+CBPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CBPopup.m"; sourceTree = "<group>"; };
+		F16B3619216F226D00B11859 /* CZHRecordVoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZHRecordVoiceViewController.swift; sourceTree = "<group>"; };
+		F16B361A216F226D00B11859 /* CZHRecordVoiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CZHRecordVoiceViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +197,7 @@
 		59CAA763213D3FCE003B3E40 /* CZHRecordVoice */ = {
 			isa = PBXGroup;
 			children = (
+				F16B3615216F210600B11859 /* CBPopup */,
 				59CAA7B8213D5C89003B3E40 /* NBLFileExplorer */,
 				59CAA7AD213D5037003B3E40 /* Category */,
 				59CAA797213D420F003B3E40 /* 音频处理 */,
@@ -199,6 +210,10 @@
 				59CAA772213D3FD0003B3E40 /* Info.plist */,
 				59CAA773213D3FD0003B3E40 /* main.m */,
 				59CAA7B1213D5107003B3E40 /* PrefixHeader.pch */,
+				F16B3613216F1C6700B11859 /* CZHRecordView.swift */,
+				F16B3612216F1C6700B11859 /* CZHRecordVoice-Bridging-Header.h */,
+				F16B3619216F226D00B11859 /* CZHRecordVoiceViewController.swift */,
+				F16B361A216F226D00B11859 /* CZHRecordVoiceViewController.xib */,
 			);
 			path = CZHRecordVoice;
 			sourceTree = "<group>";
@@ -387,6 +402,15 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		F16B3615216F210600B11859 /* CBPopup */ = {
+			isa = PBXGroup;
+			children = (
+				F16B3616216F210600B11859 /* UIViewController+CBPopup.h */,
+				F16B3617216F210600B11859 /* UIViewController+CBPopup.m */,
+			);
+			path = CBPopup;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -455,6 +479,7 @@
 				TargetAttributes = {
 					59CAA760213D3FCE003B3E40 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					59CAA778213D3FD0003B3E40 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -491,6 +516,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F16B361C216F226D00B11859 /* CZHRecordVoiceViewController.xib in Resources */,
 				59CAA771213D3FD0003B3E40 /* LaunchScreen.storyboard in Resources */,
 				59CAA76E213D3FD0003B3E40 /* Assets.xcassets in Resources */,
 				59CAA7E0213D5C89003B3E40 /* icon.bundle in Resources */,
@@ -518,6 +544,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F16B3614216F1C6700B11859 /* CZHRecordView.swift in Sources */,
 				59CAA7F4213D5E24003B3E40 /* CZHRecordTool.m in Sources */,
 				59CAA7EB213D5C89003B3E40 /* NBLFileOperationItemCell.m in Sources */,
 				59CAA7EF213D5C89003B3E40 /* NBLFileTypeManager.m in Sources */,
@@ -525,6 +552,7 @@
 				59CAA7E5213D5C89003B3E40 /* NBLFileInfo.m in Sources */,
 				59CAA7EE213D5C89003B3E40 /* NBLFileListViewController.m in Sources */,
 				59CAA7F1213D5C89003B3E40 /* NBLFileSortTool.m in Sources */,
+				F16B3618216F210600B11859 /* UIViewController+CBPopup.m in Sources */,
 				59CAA7F7213E3A2A003B3E40 /* CZHAudioPlayer.m in Sources */,
 				59CAA7EA213D5C89003B3E40 /* NBLEditGalleryView.m in Sources */,
 				59CAA769213D3FCE003B3E40 /* ViewController.m in Sources */,
@@ -542,6 +570,7 @@
 				59CAA7B7213D5A8D003B3E40 /* CZHFileManager.m in Sources */,
 				59CAA7E7213D5C89003B3E40 /* NBLFileGalleryView.m in Sources */,
 				59CAA774213D3FD0003B3E40 /* main.m in Sources */,
+				F16B361B216F226D00B11859 /* CZHRecordVoiceViewController.swift in Sources */,
 				59CAA766213D3FCE003B3E40 /* AppDelegate.m in Sources */,
 				59CAA7AC213D4270003B3E40 /* CZHRecordVoiceButton.m in Sources */,
 				59CAA7E4213D5C89003B3E40 /* NBLEditInfo.m in Sources */,
@@ -643,7 +672,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -695,7 +724,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -706,12 +735,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HY6G4W6G55;
+				DEVELOPMENT_TEAM = 54E9BM84Z9;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = CZHRecordVoice/PrefixHeader.pch;
 				INFOPLIST_FILE = CZHRecordVoice/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -722,6 +752,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = qianqun.CZHRecordVoice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CZHRecordVoice/CZHRecordVoice-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -730,12 +763,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HY6G4W6G55;
+				DEVELOPMENT_TEAM = 54E9BM84Z9;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = CZHRecordVoice/PrefixHeader.pch;
 				INFOPLIST_FILE = CZHRecordVoice/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -746,6 +780,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = qianqun.CZHRecordVoice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CZHRecordVoice/CZHRecordVoice-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -753,6 +789,7 @@
 		59CAA791213D3FD0003B3E40 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CZHRecordVoiceTests/Info.plist;
@@ -771,6 +808,7 @@
 		59CAA792213D3FD0003B3E40 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CZHRecordVoiceTests/Info.plist;
@@ -789,6 +827,7 @@
 		59CAA794213D3FD0003B3E40 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CZHRecordVoiceUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -806,6 +845,7 @@
 		59CAA795213D3FD0003B3E40 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CZHRecordVoiceUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -18,10 +18,14 @@ typedef NS_ENUM(NSInteger, ViewControllerButtonType) {
 #import "CZHFileManager.h"
 #import "CZHAudioPlayer.h"
 #import "CZHAvRelationTool.h"
+#import "AppDelegate.h"
+#import "UIViewController+CBPopup.h"
+
+#import "CZHRecordVoice-Swift.h"
 
 //
 
-@interface ViewController ()<CZHRecordVoiceButtonDelegate, CZHAudioPlayerDelegate>
+@interface ViewController ()<CZHRecordVoiceButtonDelegate, CZHAudioPlayerDelegate,CZHRecordVoiceViewDelegate>
 ///<#注释#>
 @property (nonatomic, weak) UIButton *playButton;
 ///<#注释#>
@@ -36,11 +40,27 @@ typedef NS_ENUM(NSInteger, ViewControllerButtonType) {
     [super viewDidLoad];
     
 
+
     [self czh_setUpView];
     
     [CZHAudioPlayer shareInstance].delegate = self;
 }
 
+-(void)showAction:(UIButton *)button {
+
+    CZHRecordVoiceButton *recordButton = [[CZHRecordVoiceButton alloc] init];
+    recordButton.backgroundColor = UIColor.grayColor;
+    recordButton.center = self.view.center;
+    recordButton.czh_width = self.view.czh_width * 0.8;
+    recordButton.czh_height = 300;
+    recordButton.delegate = self;
+
+    CZHRecordVoiceViewController * voiceRecordViewController = [[CZHRecordVoiceViewController alloc]init];
+    voiceRecordViewController.delegate = self;
+    [voiceRecordViewController showIn:self];
+
+
+}
 
 - (void)czh_setUpView {
     
@@ -49,11 +69,12 @@ typedef NS_ENUM(NSInteger, ViewControllerButtonType) {
     CGFloat recordButtonY = CZHScreenHeight - CZHSafeAreaBottomHeight - recordButtonH - CZH_ScaleWidth(15);
     CGFloat recordButtonW = CZHScreenWidth - recordButtonX * 2;
     CGRect recordButtonF = CGRectMake(recordButtonX, recordButtonY, recordButtonW, recordButtonH);
-    
-    CZHRecordVoiceButton *recordButton = [[CZHRecordVoiceButton alloc] init];
-    recordButton.frame = recordButtonF;
-    recordButton.delegate = self;
-    [self.view addSubview:recordButton];
+
+    UIButton * button = [[UIButton alloc] initWithFrame:recordButtonF];
+    [button setTitle:@"开始录音" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(showAction:) forControlEvents:UIControlEventTouchUpInside];
+    button.backgroundColor = [UIColor redColor];
+    [self.view addSubview:button];
     
     
     CGFloat checkButtonX = recordButtonX;
@@ -170,22 +191,22 @@ typedef NS_ENUM(NSInteger, ViewControllerButtonType) {
 }
 
 #pragma 录制按钮代理
-- (void)czh_continueRecordingWithButton:(CZHRecordVoiceButton *)button {
+- (void)continueRecording{
     
     CZHLog(@"持续录制");
 }
 
-- (void)czh_didBeginRecordWithButton:(CZHRecordVoiceButton *)button {
+- (void)didBeginRecord{
     CZHLog(@"开始录制");
-    ///开始录制停止播放
     [[CZHAudioPlayer shareInstance] czh_stopCurrentAudio];
 }
 
-- (void)czh_didCancelRecordWithButton:(CZHRecordVoiceButton *)button {
+- (void)didCancelRecord {
     CZHLog(@"取消录制");
 }
 
-- (void)czh_didFinishedRecordWithButton:(CZHRecordVoiceButton *)button audioLocalPath:(NSString *)audioLocalPath {
+-(void)didFinishedRecordWith:(NSString *)audioLocalPath {
+
     CZHLog(@"结束录制返回路径=%@", audioLocalPath);
     
     //转换成amr的路径，文件大小大概只有原来的1/10，所以上传到服务器比较快，播放的时候记得转换成wav的
@@ -198,9 +219,8 @@ typedef NS_ENUM(NSInteger, ViewControllerButtonType) {
     }
 }
 
-- (void)czh_willCancelRecordWithButton:(CZHRecordVoiceButton *)button {
+- (void)willCancelRecord{
     CZHLog(@"将要取消录制");
 }
-
 
 @end

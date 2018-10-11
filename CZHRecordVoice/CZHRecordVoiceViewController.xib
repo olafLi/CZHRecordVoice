@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CZHRecordVoiceViewController" customModule="CZHRecordVoice" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lc4-P6-ZXv">
+                    <rect key="frame" x="0.0" y="627" width="187.5" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="U4G-83-t1f"/>
+                    </constraints>
+                    <state key="normal" title="确定"/>
+                    <connections>
+                        <action selector="submitVoiceRecord:" destination="-1" eventType="touchUpInside" id="HLY-zw-QQc"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zx-Dg-uAS">
+                    <rect key="frame" x="187.5" y="627" width="187.5" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="NUj-3g-edY"/>
+                    </constraints>
+                    <state key="normal" title="取消"/>
+                    <connections>
+                        <action selector="cancelVoiceRecord:" destination="-1" eventType="touchUpInside" id="ZO0-ZD-kTr"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZ2-ya-hI8" customClass="CZHRecordVoiceHUD">
+                    <rect key="frame" x="127.5" y="273.5" width="120" height="120"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="O0L-q3-kvO"/>
+                        <constraint firstAttribute="width" constant="120" id="ntZ-ml-imy"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="VZ2-ya-hI8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2ah-l7-fXx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="2zx-Dg-uAS" secondAttribute="bottom" id="3CX-qv-mZA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2zx-Dg-uAS" secondAttribute="trailing" id="FjE-gd-Urj"/>
+                <constraint firstItem="lc4-P6-ZXv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZVu-cv-Dhq"/>
+                <constraint firstItem="2zx-Dg-uAS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="j9t-4K-gDV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="centerX" secondItem="lc4-P6-ZXv" secondAttribute="trailing" id="lxT-er-44l"/>
+                <constraint firstItem="VZ2-ya-hI8" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="o6Y-XC-e0W"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lc4-P6-ZXv" secondAttribute="bottom" id="vvH-Nk-Uhq"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-132" y="15"/>
+        </view>
+    </objects>
+</document>

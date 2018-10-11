@@ -25,7 +25,6 @@ typedef NS_ENUM(NSInteger, CZHRecordVoiceHUDType) {
 
 @interface CZHRecordVoiceHUD : UIView
 
-
 + (instancetype)shareInstance;
 ///刷新视图
 - (void)czh_showHUDWithType:(CZHRecordVoiceHUDType)type;

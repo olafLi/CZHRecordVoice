@@ -13,8 +13,8 @@
 
 @interface CZHRecordVoiceButton ()
 
-///<#注释#>
 @property (nonatomic, copy) NSString *audioLocalPath;
+@property (nonatomic, assign , getter=isPlaying) BOOL playing;
 
 @end
 
@@ -26,11 +26,11 @@
     
 }
 
-
 - (instancetype)init {
     
     if (self = [super init]) {
-       
+
+        [self addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self czh_setView];
         
         [self czh_addGesture];
@@ -52,15 +52,73 @@
     self.layer.borderColor = [UIColor colorWithWhite:0.6 alpha:1.0].CGColor;
     
     self.titleLabel.font = CZHGlobelNormalFont(16);
-    
-    
+
+}
+
+-(void)buttonAction:(UIButton *)button {
+    if (self.isPlaying) {
+        [self submitVoiceRecord];
+    } else {
+        [self playVoiceRecord];
+    }
+
+}
+
+- (void)playVoiceRecord {
+    if (self.isPlaying == NO){
+        self.playing = YES;
+        CZHLog(@"---开始录音");
+        [self czh_setButtonStateWithRecording];
+        NSString *audioLocalPath = [CZHFileManager czh_filePath];
+        self.audioLocalPath = audioLocalPath;
+        [[CZHRecordTool shareInstance] czh_beginRecordWithRecordPath:audioLocalPath];
+        [[CZHRecordVoiceHUD shareInstance] czh_showHUDWithType:CZHRecordVoiceHUDTypeBeginRecord];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(czh_didBeginRecordWithButton:)]) {
+            [self.delegate czh_didBeginRecordWithButton:self];
+        }
+    }
+}
+
+-(void) cancelVoiceRecord {
+    if (self.isPlaying == YES) {
+        self.playing = NO;
+        CZHLog(@"---停止录音");
+        [[CZHRecordVoiceHUD shareInstance] czh_showHUDWithType:CZHRecordVoiceHUDTypeEndRecord];
+        [self czh_setButtonStateWithNormal];
+        [[CZHRecordTool shareInstance] czh_endRecord]; // 结束录音
+    }
+}
+
+-(void) submitVoiceRecord {
+    if (self.isPlaying == YES) {
+        self.playing = NO;
+        [[CZHRecordVoiceHUD shareInstance] czh_showHUDWithType:CZHRecordVoiceHUDTypeEndRecord];
+        [self czh_setButtonStateWithNormal];
+        [[CZHRecordTool shareInstance] czh_endRecord]; // 结束录音
+            ///把wav转成amr，减小文件大小
+        NSString *amrFilePath = [CZHFileManager czh_convertWavtoAMRWithVoiceFilePath:self.audioLocalPath];
+            //删除wav文件
+        [CZHFileManager czh_removeFile:self.audioLocalPath];
+            //代理返回amr文件路径
+        if (self.delegate && [self.delegate respondsToSelector:@selector(czh_didFinishedRecordWithButton:audioLocalPath:)]) {
+            [self.delegate czh_didFinishedRecordWithButton:self audioLocalPath:amrFilePath];
+        }
+    }
 }
 
 - (void)czh_addGesture {
-    
-    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
-    [self addGestureRecognizer:longPress];
-    
+
+    if (!self.isPlaying) {
+
+    } else {
+
+    }
+
+
+
+//    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
+//    [self addGestureRecognizer:longPress];
+
 }
 
 - (void)longPress:(UILongPressGestureRecognizer *)gr {
@@ -94,7 +152,7 @@
         }
         
         
-    }else if (gr.state == UIGestureRecognizerStateChanged) {//长按改变位置
+    } else if (gr.state == UIGestureRecognizerStateChanged) {//长按改变位置
         
         #warning---如果按钮是放在类似微信键盘上，这里的view使用button的superview的czh_height self.superview.czh_height
         if (point.y < 0 || point.y > self.czh_height) {//超出范围提示松开手指取消发送

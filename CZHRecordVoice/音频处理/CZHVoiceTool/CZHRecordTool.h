@@ -33,7 +33,8 @@
 @property (nonatomic,assign) BOOL isRecording;
 ///代理
 @property (nonatomic, weak) id<CZHRecordToolDelegate> delegate;
-singtonInterface
+
++ (instancetype)shareInstance;
 
 /**
  *  开始录音

@@ -28,5 +28,7 @@
 ///代理
 @property (nonatomic, weak) id<CZHRecordVoiceButtonDelegate> delegate;
 
+-(void)playVoiceRecord;
+
 
 @end
