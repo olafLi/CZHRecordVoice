@@ -31,4 +31,6 @@ typedef NS_ENUM(NSInteger, CZHRecordVoiceHUDType) {
 ///时间太长自动发送
 @property (nonatomic, copy) void (^longTimeHandler)(void);
 
+- (void)showHUDWithType:(CZHRecordVoiceHUDType)type;
+
 @end

@@ -22,6 +22,11 @@ public class CZHRecordVoiceViewController: UIViewController {
     var audioLocalPath:String = ""
     var playing:Bool = false
 
+    lazy  var voiceView: CZHRecordVoiceHUD = {
+        let hub = CZHRecordVoiceHUD(frame: self.view.bounds)
+        return hub
+    }()
+
     @objc
     public var delegate:CZHRecordVoiceViewDelegate?
 
@@ -29,6 +34,14 @@ public class CZHRecordVoiceViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
 
+        self.view .addSubview(CZHRecordVoiceHUD.shareInstance())
+    }
+
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+//        CZHRecordVoiceHUD.shareInstance()?.center = self.view.center;
+        CZHRecordVoiceHUD.shareInstance()?.layoutIfNeeded()
+        CZHRecordVoiceHUD.shareInstance()?.setNeedsLayout()
     }
 
     @objc
@@ -54,7 +67,8 @@ public class CZHRecordVoiceViewController: UIViewController {
         self.playing = true
         self.audioLocalPath = CZHFileManager.czh_filePath()!
         CZHRecordTool.shareInstance()?.czh_beginRecord(withRecordPath: self.audioLocalPath)
-        CZHRecordVoiceHUD.shareInstance()?.czh_show(with: CZHRecordVoiceHUDType.beginRecord)
+
+        CZHRecordVoiceHUD.shareInstance()?.show(with: CZHRecordVoiceHUDType.beginRecord)
         CZHRecordVoiceHUD.shareInstance()?.longTimeHandler = {
             self.submitVoiceRecord()
         }
@@ -68,8 +82,7 @@ public class CZHRecordVoiceViewController: UIViewController {
 
         self.playing = false
         CZHRecordTool.shareInstance()?.czh_endRecord()
-        CZHRecordVoiceHUD.shareInstance()?.czh_show(with: CZHRecordVoiceHUDType.endRecord)
-
+        CZHRecordVoiceHUD.shareInstance()?.show(with: CZHRecordVoiceHUDType.endRecord)
         if let delegate = delegate {
             delegate .didCancelRecord()
         }
@@ -80,8 +93,7 @@ public class CZHRecordVoiceViewController: UIViewController {
 
         self.playing = false
         CZHRecordTool.shareInstance()?.czh_endRecord()
-        CZHRecordVoiceHUD.shareInstance()?.czh_show(with: CZHRecordVoiceHUDType.endRecord)
-
+        CZHRecordVoiceHUD.shareInstance()?.show(with: CZHRecordVoiceHUDType.endRecord)
         let amrFilePath = CZHFileManager.czh_convertWavtoAMR(withVoiceFilePath: self.audioLocalPath)
         CZHFileManager.czh_removeFile(self.audioLocalPath)
 

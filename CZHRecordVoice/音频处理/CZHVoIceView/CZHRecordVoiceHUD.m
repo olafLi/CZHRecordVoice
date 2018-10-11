@@ -44,6 +44,7 @@ static NSInteger const maxRecordTime = 60;
 ///渐变图层
 @property (nonatomic, weak) CAGradientLayer *gradientLayer;
 
+@property (nonatomic, strong) UIView * superView;
 @end
 
 static CZHRecordVoiceHUD *_hud = nil;
@@ -86,6 +87,15 @@ static CZHRecordVoiceHUD *_hud = nil;
         
         [self czh_setView];
         
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self czh_setView];
     }
     return self;
 }
@@ -142,7 +152,9 @@ static CZHRecordVoiceHUD *_hud = nil;
 
 
 - (void)czh_setView {
-    
+
+    self.superView = UIApplication.sharedApplication.keyWindow;
+
     UIView *containView = [[UIView alloc] init];
     //    containView.frame = containViewF;
     //    containView.backgroundColor = MLRGBColor(0x000000, 0.4);
@@ -218,7 +230,7 @@ static CZHRecordVoiceHUD *_hud = nil;
     
     if (type == CZHRecordVoiceHUDTypeBeginRecord) {//开始录制
         
-        _hud.describeLabel.text = @"松开发送，上滑取消";
+        _hud.describeLabel.text = @"音频开始录制";
         _hud.levelContentView.hidden = NO;
         _hud.gradientLayer.hidden = YES;
         _hud.countDownLabel.hidden = YES;
@@ -230,7 +242,7 @@ static CZHRecordVoiceHUD *_hud = nil;
         
     } else if (type == CZHRecordVoiceHUDTypeRecording) {//正在录制
         
-        _hud.describeLabel.text = @"松开发送，上滑取消";
+        _hud.describeLabel.text = @"音频录制中...";
         _hud.gradientLayer.hidden = YES;
         _hud.centerImageView.hidden = YES;
         
@@ -248,7 +260,7 @@ static CZHRecordVoiceHUD *_hud = nil;
         _hud.levelContentView.hidden = YES;
         _hud.gradientLayer.hidden = NO;
         _hud.centerImageView.image = [UIImage imageNamed:@"audio_record_cancel"];
-        _hud.describeLabel.text = @"松开手指，取消发送";
+        _hud.describeLabel.text = @"取消发送";
         
         
     } else if (type == CZHRecordVoiceHUDTypeAudioTooShort) {//录制太短了
@@ -378,16 +390,19 @@ static CZHRecordVoiceHUD *_hud = nil;
 
 
 - (void)czh_showHUDWithType:(CZHRecordVoiceHUDType)type {
-    
+
     [self czh_shareVoiceHudWithType:type];
-    
+
     [[UIApplication sharedApplication].keyWindow addSubview:self];
-    
+
+}
+
+-(void)showHUDWithType:(CZHRecordVoiceHUDType)type{
+    [self czh_shareVoiceHudWithType:type];
 }
 
 - (void)czh_updateTimeWithRecordTime:(NSInteger)recordTime {
-    
-    
+
     NSString *text;
     if (recordTime < 60) {
         text = [NSString stringWithFormat:@"0:%02zd",recordTime];
@@ -415,8 +430,8 @@ static CZHRecordVoiceHUD *_hud = nil;
     
     CGFloat containViewW = CZH_ScaleWidth(140);
     CGFloat containViewH = CZH_ScaleWidth(140);
-    CGFloat containViewX = (CZHScreenWidth - containViewW) * 0.5;
-    CGFloat containViewY = (CZHScreenHeight - containViewH) * 0.5;
+    CGFloat containViewX = (self.superview.czh_width - containViewW) * 0.5;
+    CGFloat containViewY = (self.superview.czh_height - containViewH) * 0.5;
     CGRect containViewF = CGRectMake(containViewX, containViewY, containViewW, containViewH);
     self.containView.frame = containViewF;
     [self.containView czh_cornerAllCornersWithCornerRadius:CZH_ScaleWidth(5)];

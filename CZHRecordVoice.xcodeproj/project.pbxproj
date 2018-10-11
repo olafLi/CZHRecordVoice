@@ -42,7 +42,6 @@
 		59CAA7F4213D5E24003B3E40 /* CZHRecordTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA7F3213D5E24003B3E40 /* CZHRecordTool.m */; };
 		59CAA7F7213E3A2A003B3E40 /* CZHAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA7F6213E3A2A003B3E40 /* CZHAudioPlayer.m */; };
 		59CAA7FA213E4055003B3E40 /* CZHAvRelationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAA7F9213E4055003B3E40 /* CZHAvRelationTool.m */; };
-		F16B3614216F1C6700B11859 /* CZHRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16B3613216F1C6700B11859 /* CZHRecordView.swift */; };
 		F16B3618216F210600B11859 /* UIViewController+CBPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = F16B3617216F210600B11859 /* UIViewController+CBPopup.m */; };
 		F16B361B216F226D00B11859 /* CZHRecordVoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16B3619216F226D00B11859 /* CZHRecordVoiceViewController.swift */; };
 		F16B361C216F226D00B11859 /* CZHRecordVoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F16B361A216F226D00B11859 /* CZHRecordVoiceViewController.xib */; };
@@ -140,7 +139,6 @@
 		59CAA7F8213E4055003B3E40 /* CZHAvRelationTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZHAvRelationTool.h; sourceTree = "<group>"; };
 		59CAA7F9213E4055003B3E40 /* CZHAvRelationTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZHAvRelationTool.m; sourceTree = "<group>"; };
 		F16B3612216F1C6700B11859 /* CZHRecordVoice-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CZHRecordVoice-Bridging-Header.h"; sourceTree = "<group>"; };
-		F16B3613216F1C6700B11859 /* CZHRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZHRecordView.swift; sourceTree = "<group>"; };
 		F16B3616216F210600B11859 /* UIViewController+CBPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CBPopup.h"; sourceTree = "<group>"; };
 		F16B3617216F210600B11859 /* UIViewController+CBPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CBPopup.m"; sourceTree = "<group>"; };
 		F16B3619216F226D00B11859 /* CZHRecordVoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CZHRecordVoiceViewController.swift; sourceTree = "<group>"; };
@@ -210,10 +208,7 @@
 				59CAA772213D3FD0003B3E40 /* Info.plist */,
 				59CAA773213D3FD0003B3E40 /* main.m */,
 				59CAA7B1213D5107003B3E40 /* PrefixHeader.pch */,
-				F16B3613216F1C6700B11859 /* CZHRecordView.swift */,
 				F16B3612216F1C6700B11859 /* CZHRecordVoice-Bridging-Header.h */,
-				F16B3619216F226D00B11859 /* CZHRecordVoiceViewController.swift */,
-				F16B361A216F226D00B11859 /* CZHRecordVoiceViewController.xib */,
 			);
 			path = CZHRecordVoice;
 			sourceTree = "<group>";
@@ -296,6 +291,8 @@
 		59CAA7A8213D4242003B3E40 /* CZHVoIceView */ = {
 			isa = PBXGroup;
 			children = (
+				F16B3619216F226D00B11859 /* CZHRecordVoiceViewController.swift */,
+				F16B361A216F226D00B11859 /* CZHRecordVoiceViewController.xib */,
 				59CAA7AA213D4270003B3E40 /* CZHRecordVoiceButton.h */,
 				59CAA7AB213D4270003B3E40 /* CZHRecordVoiceButton.m */,
 				59CAA7B2213D539D003B3E40 /* CZHRecordVoiceHUD.h */,
@@ -544,7 +541,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F16B3614216F1C6700B11859 /* CZHRecordView.swift in Sources */,
 				59CAA7F4213D5E24003B3E40 /* CZHRecordTool.m in Sources */,
 				59CAA7EB213D5C89003B3E40 /* NBLFileOperationItemCell.m in Sources */,
 				59CAA7EF213D5C89003B3E40 /* NBLFileTypeManager.m in Sources */,

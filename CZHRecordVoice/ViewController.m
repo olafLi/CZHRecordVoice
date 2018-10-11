@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, ViewControllerButtonType) {
 
 //
 
-@interface ViewController ()<CZHRecordVoiceButtonDelegate, CZHAudioPlayerDelegate,CZHRecordVoiceViewDelegate>
+@interface ViewController ()<CZHAudioPlayerDelegate,CZHRecordVoiceViewDelegate>
 ///<#注释#>
 @property (nonatomic, weak) UIButton *playButton;
 ///<#注释#>
@@ -48,12 +48,12 @@ typedef NS_ENUM(NSInteger, ViewControllerButtonType) {
 
 -(void)showAction:(UIButton *)button {
 
-    CZHRecordVoiceButton *recordButton = [[CZHRecordVoiceButton alloc] init];
-    recordButton.backgroundColor = UIColor.grayColor;
-    recordButton.center = self.view.center;
-    recordButton.czh_width = self.view.czh_width * 0.8;
-    recordButton.czh_height = 300;
-    recordButton.delegate = self;
+//    CZHRecordVoiceButton *recordButton = [[CZHRecordVoiceButton alloc] init];
+//    recordButton.backgroundColor = UIColor.grayColor;
+//    recordButton.center = self.view.center;
+//    recordButton.czh_width = self.view.czh_width * 0.8;
+//    recordButton.czh_height = 300;
+//    recordButton.delegate = self;
 
     CZHRecordVoiceViewController * voiceRecordViewController = [[CZHRecordVoiceViewController alloc]init];
     voiceRecordViewController.delegate = self;

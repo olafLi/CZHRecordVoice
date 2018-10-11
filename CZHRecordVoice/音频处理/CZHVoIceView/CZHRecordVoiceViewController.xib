@@ -40,24 +40,14 @@
                         <action selector="cancelVoiceRecord:" destination="-1" eventType="touchUpInside" id="ZO0-ZD-kTr"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZ2-ya-hI8" customClass="CZHRecordVoiceHUD">
-                    <rect key="frame" x="127.5" y="273.5" width="120" height="120"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="120" id="O0L-q3-kvO"/>
-                        <constraint firstAttribute="width" constant="120" id="ntZ-ml-imy"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="VZ2-ya-hI8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2ah-l7-fXx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="2zx-Dg-uAS" secondAttribute="bottom" id="3CX-qv-mZA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2zx-Dg-uAS" secondAttribute="trailing" id="FjE-gd-Urj"/>
                 <constraint firstItem="lc4-P6-ZXv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZVu-cv-Dhq"/>
                 <constraint firstItem="2zx-Dg-uAS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="j9t-4K-gDV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="centerX" secondItem="lc4-P6-ZXv" secondAttribute="trailing" id="lxT-er-44l"/>
-                <constraint firstItem="VZ2-ya-hI8" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="o6Y-XC-e0W"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lc4-P6-ZXv" secondAttribute="bottom" id="vvH-Nk-Uhq"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
