@@ -133,7 +133,6 @@ static CZHRecordVoiceHUD *_hud = nil;
     dispatch_source_set_event_handler(self.timer, ^{
         
         self.durationTime -= 0.1;
-        //        ONSLog(@"+++++++%f", self.durationTime);
         dispatch_async(dispatch_get_main_queue(), ^{
             
             if (self.durationTime <= 0) {
@@ -364,12 +363,9 @@ static CZHRecordVoiceHUD *_hud = nil;
 
 - (void)updateMeter {
     CGFloat level = [[CZHRecordTool shareInstance] czh_updateLevels];
-    NSLog(@"%f",level);
     [self.currentLevels removeLastObject];
     [self.currentLevels insertObject:@(level) atIndex:0];
-//
     [self.allLevels addObject:@(level)];
-    NSLog(@"%@",self.allLevels);
     [self updateLevelLayer];
 }
 
