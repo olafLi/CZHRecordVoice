@@ -35,4 +35,5 @@ typedef NS_ENUM(NSInteger, CZHRecordVoiceHUDType) {
 
 - (void)showHUDWithType:(CZHRecordVoiceHUDType)type;
 
+@property (nonatomic,assign,readonly) NSInteger seconds;
 @end

@@ -51,7 +51,7 @@ typedef NS_ENUM(NSInteger, ViewControllerButtonType) {
 
     CZHRecordVoiceViewController * voiceRecordViewController = [[CZHRecordVoiceViewController alloc] initWithNibName:@"CZHRecordVoiceViewController" bundle:[NSBundle bundleForClass:[CZHRecordVoiceViewController class]]];
     voiceRecordViewController.delegate = self;
-    [voiceRecordViewController showIn:self];
+    [voiceRecordViewController showInViewController:self];
 
 
 }

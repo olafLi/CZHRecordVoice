@@ -390,17 +390,17 @@ static CZHRecordVoiceHUD *_hud = nil;
     self.levelLayer.path = _levelPath.CGPath;
 }
 
-
-- (void)czh_showHUDWithType:(CZHRecordVoiceHUDType)type {
-
-    [self czh_shareVoiceHudWithType:type];
-
-    [[UIApplication sharedApplication].keyWindow addSubview:self];
-
+-(NSInteger)seconds {
+    return self.recordTime;
 }
 
--(void)showHUDWithType:(CZHRecordVoiceHUDType)type{
+- (void)czh_showHUDWithType:(CZHRecordVoiceHUDType)type {
+    [self showHUDWithType:type inView:[UIApplication sharedApplication].keyWindow];
+}
+
+-(void)showHUDWithType:(CZHRecordVoiceHUDType)type inView:(UIView *) view {
     [self czh_shareVoiceHudWithType:type];
+    [view addSubview:self];
 }
 
 - (void)czh_updateTimeWithRecordTime:(NSInteger)recordTime {

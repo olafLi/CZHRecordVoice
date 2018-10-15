@@ -9,7 +9,7 @@
 #define LOCAL_AUDIO_FOLDER @"CZHVoice"
 
 #import "CZHFileManager.h"
-#import "amrFileCodec.h"
+//#import "amrFileCodec.h"
 
 @implementation CZHFileManager
 
@@ -39,21 +39,21 @@
 
 
 //转换为amr格式并生成文件到savePath(showSize是否在控制台打印转换后的文件大小)
-+ (NSString *)czh_convertWavtoAMRWithVoiceFilePath:(NSString *)voiceFilePath{
-    
-    NSData *data = [NSData dataWithContentsOfFile:voiceFilePath];
-    
-    data = EncodeWAVEToAMR(data,1,16);
-    
-    NSString *amrFilePath = [voiceFilePath stringByReplacingOccurrencesOfString:@"wav" withString:@"amr"];
-    
-    BOOL isSuccess=[data writeToURL:[NSURL fileURLWithPath:amrFilePath] atomically:YES];
-    
-    if (isSuccess) {
-        NSLog(@"CDPAudioRecorder转换为amr格式成功,大小为%@",[self czh_fileSizeAtPath:amrFilePath]);
-    }
-    return amrFilePath;
-}
+//+ (NSString *)czh_convertWavtoAMRWithVoiceFilePath:(NSString *)voiceFilePath{
+//
+//    NSData *data = [NSData dataWithContentsOfFile:voiceFilePath];
+//
+//    data = EncodeWAVEToAMR(data,1,16);
+//
+//    NSString *amrFilePath = [voiceFilePath stringByReplacingOccurrencesOfString:@"wav" withString:@"amr"];
+//
+//    BOOL isSuccess=[data writeToURL:[NSURL fileURLWithPath:amrFilePath] atomically:YES];
+//
+//    if (isSuccess) {
+//        NSLog(@"CDPAudioRecorder转换为amr格式成功,大小为%@",[self czh_fileSizeAtPath:amrFilePath]);
+//    }
+//    return amrFilePath;
+//}
 
 + (NSString *)czh_saveWavWithVoiceUrl:(NSString *)voiceUrl {
     
@@ -73,53 +73,53 @@
         return @"";
     }
 }
-+ (NSString *)czh_convertAMRToWavWithVoiceFilePath:(NSString *)voiceFilePath {
-    NSData *data = [NSData dataWithContentsOfFile:voiceFilePath];
-    
-    data = DecodeAMRToWAVE(data);
-    
-    NSString *folderPath = [CZHFileManager czh_folderPath];
-    
-    NSString *wavPath = [folderPath stringByAppendingPathComponent:[voiceFilePath lastPathComponent]];
-    
-    wavPath = [wavPath stringByReplacingOccurrencesOfString:@"amr" withString:@"wav"];
-    
-    BOOL isSuccess = [data writeToFile:wavPath atomically:YES];
-    
-    if (isSuccess) {
-        NSLog(@"保存成功%@",wavPath);
-        return wavPath;
-    } else {
-        NSLog(@"保存失败");
-        return @"";
-    }
-}
-
-
-
-
-+ (NSString *)czh_convertAMRToWavWithVoiceUrl:(NSString *)voiceUrl {
-    
-    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:voiceUrl]];
-    
-    data = DecodeAMRToWAVE(data);
-    
-    NSString *folderPath = [CZHFileManager czh_folderPath];
-    
-    NSString *wavPath = [folderPath stringByAppendingPathComponent:[voiceUrl lastPathComponent]];
-    
-    wavPath = [wavPath stringByReplacingOccurrencesOfString:@"amr" withString:@"wav"];
-    
-    BOOL isSuccess = [data writeToFile:wavPath atomically:YES];
-    
-    if (isSuccess) {
-        NSLog(@"保存成功%@",wavPath);
-        return wavPath;
-    } else {
-        NSLog(@"保存失败");
-        return @"";
-    }
-}
+//+ (NSString *)czh_convertAMRToWavWithVoiceFilePath:(NSString *)voiceFilePath {
+//    NSData *data = [NSData dataWithContentsOfFile:voiceFilePath];
+//
+//    data = DecodeAMRToWAVE(data);
+//
+//    NSString *folderPath = [CZHFileManager czh_folderPath];
+//
+//    NSString *wavPath = [folderPath stringByAppendingPathComponent:[voiceFilePath lastPathComponent]];
+//
+//    wavPath = [wavPath stringByReplacingOccurrencesOfString:@"amr" withString:@"wav"];
+//
+//    BOOL isSuccess = [data writeToFile:wavPath atomically:YES];
+//
+//    if (isSuccess) {
+//        NSLog(@"保存成功%@",wavPath);
+//        return wavPath;
+//    } else {
+//        NSLog(@"保存失败");
+//        return @"";
+//    }
+//}
+//
+//
+//
+//
+//+ (NSString *)czh_convertAMRToWavWithVoiceUrl:(NSString *)voiceUrl {
+//
+//    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:voiceUrl]];
+//
+//    data = DecodeAMRToWAVE(data);
+//
+//    NSString *folderPath = [CZHFileManager czh_folderPath];
+//
+//    NSString *wavPath = [folderPath stringByAppendingPathComponent:[voiceUrl lastPathComponent]];
+//
+//    wavPath = [wavPath stringByReplacingOccurrencesOfString:@"amr" withString:@"wav"];
+//
+//    BOOL isSuccess = [data writeToFile:wavPath atomically:YES];
+//
+//    if (isSuccess) {
+//        NSLog(@"保存成功%@",wavPath);
+//        return wavPath;
+//    } else {
+//        NSLog(@"保存失败");
+//        return @"";
+//    }
+//}
 
 
 + (NSString *)czh_voiceUrlIsExistInLocalWithLastPathComponent:(NSString *)lastPathComponent {

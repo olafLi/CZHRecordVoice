@@ -18,6 +18,10 @@ public protocol CZHRecordVoiceViewDelegate : NSObjectProtocol {
 }
 
 public class CZHRecordVoiceViewController: UIViewController {
+    
+    public typealias RecordVoiceFinishedHandler = (_ path:String,_ seconds:Int) -> Void
+
+    public var recordVoiceFinidhedHandler:RecordVoiceFinishedHandler?
 
     var audioLocalPath:String = ""
     var playing:Bool = false
@@ -34,20 +38,22 @@ public class CZHRecordVoiceViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
 
-        self.view .addSubview(CZHRecordVoiceHUD.shareInstance())
+//        self.view.addSubview(CZHRecordVoiceHUD.shareInstance())
+
     }
 
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-//        CZHRecordVoiceHUD.shareInstance()?.center = self.view.center;
-        CZHRecordVoiceHUD.shareInstance()?.layoutIfNeeded()
-        CZHRecordVoiceHUD.shareInstance()?.setNeedsLayout()
+//        CZHRecordVoiceHUD.shareInstance()?.center = CGPoint(x: self.view.czh_width / 2, y: self.view.czh_height / 2)
+//        CZHRecordVoiceHUD.shareInstance()?.layoutIfNeeded()
+//        CZHRecordVoiceHUD.shareInstance()?.setNeedsLayout()
     }
 
     @objc
-    public func show(in viewController: UIViewController) {
+    public func show(inViewController: UIViewController) {
         self.view.frame = CGRect(x: 0, y: 0, width: 300, height: 250)
-        viewController.cb_presentPopupViewController(self)
+        inViewController.cb_presentPopupViewController(self)
+
         self.playVoiceRecord()
     }
 
@@ -63,18 +69,19 @@ public class CZHRecordVoiceViewController: UIViewController {
 
     func playVoiceRecord(){
         guard playing == false else { return }
-
         self.playing = true
         self.audioLocalPath = CZHFileManager.czh_filePath()!
         CZHRecordTool.shareInstance()?.czh_beginRecord(withRecordPath: self.audioLocalPath)
 
-        CZHRecordVoiceHUD.shareInstance()?.show(with: CZHRecordVoiceHUDType.beginRecord)
+        CZHRecordVoiceHUD.shareInstance()?.czh_show(with: CZHRecordVoiceHUDType.beginRecord)
         CZHRecordVoiceHUD.shareInstance()?.longTimeHandler = {
             self.submitVoiceRecord()
+            self.cb_dismissPopupViewController(animated: true)
         }
         if let delegate = delegate {
             delegate.didBeginRecord()
         }
+
     }
 
     func cancelVoiceRecord() {
@@ -82,7 +89,7 @@ public class CZHRecordVoiceViewController: UIViewController {
 
         self.playing = false
         CZHRecordTool.shareInstance()?.czh_endRecord()
-        CZHRecordVoiceHUD.shareInstance()?.show(with: CZHRecordVoiceHUDType.endRecord)
+        CZHRecordVoiceHUD.shareInstance()?.czh_show(with: CZHRecordVoiceHUDType.endRecord)
         if let delegate = delegate {
             delegate .didCancelRecord()
         }
@@ -92,14 +99,14 @@ public class CZHRecordVoiceViewController: UIViewController {
         guard playing else { return }
 
         self.playing = false
+        let recordTimes = CZHRecordVoiceHUD.shareInstance()?.seconds ?? 0
         CZHRecordTool.shareInstance()?.czh_endRecord()
-        CZHRecordVoiceHUD.shareInstance()?.show(with: CZHRecordVoiceHUDType.endRecord)
-        let amrFilePath = CZHFileManager.czh_convertWavtoAMR(withVoiceFilePath: self.audioLocalPath)
-        CZHFileManager.czh_removeFile(self.audioLocalPath)
-
-        if let delegate = delegate , let amrFilePath = amrFilePath {
-            delegate .didFinishedRecord(with: amrFilePath)
+        CZHRecordVoiceHUD.shareInstance()?.czh_show(with: CZHRecordVoiceHUDType.endRecord)
+        if let delegate = delegate {
+            delegate .didFinishedRecord(with: self.audioLocalPath)
         }
-
+        if let handler = self.recordVoiceFinidhedHandler {
+            handler(self.audioLocalPath,recordTimes)
+        }
     }
 }
