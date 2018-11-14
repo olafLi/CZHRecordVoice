@@ -109,4 +109,9 @@ public class CZHRecordVoiceViewController: UIViewController {
             handler(self.audioLocalPath,recordTimes)
         }
     }
+
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        cancelVoiceRecord()
+    }
 }
