@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "CCIRecordVoice"
-  s.version      = "0.0.2"
+  s.version      = "0.1.0"
   s.summary      = "CCIRecordVoice is a 录音控件"
   s.description  = <<-DESC
                   CCIRecordVoice is a 录音控件r
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.exclude_files = "Classes/Exclude"
   s.resources = "Classes/**/*.{xib}"
   s.public_header_files = "Classes/{CZHVoiceTool,CZHVoiceView}/*.{h}","CZHRecordVoice/{CBPopup,Category}/*.h"
-#  s.vendored_libraries = ['Classes/AMR/lib/libopencore-amrnb.a','Classes/AMR/lib/libopencore-amrwb.a']
+  s.vendored_libraries = ['Classes/AMR/lib/libopencore-amrnb.a','Classes/AMR/lib/libopencore-amrwb.a']
   s.requires_arc = true
 
 end
