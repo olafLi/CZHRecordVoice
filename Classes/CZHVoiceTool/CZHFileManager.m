@@ -54,6 +54,19 @@
 //    }
 //    return amrFilePath;
 //}
++ (NSString*)czh_saveFileWithURL:(NSString *)fileUrl withFileName:(NSString *)fileName {
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:fileUrl]];
+    NSString *folderPath = [CZHFileManager czh_folderPath];
+    NSString *wavPath = [folderPath stringByAppendingPathComponent:fileName];
+    BOOL isSuccess = [data writeToFile:wavPath atomically:YES];
+    if (isSuccess) {
+        NSLog(@"保存成功%@",wavPath);
+        return wavPath;
+    } else {
+        NSLog(@"保存失败");
+        return @"";
+    }
+}
 
 + (NSString *)czh_saveWavWithVoiceUrl:(NSString *)voiceUrl {
     

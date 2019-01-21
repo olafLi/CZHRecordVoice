@@ -13,6 +13,15 @@
 
 @implementation CZHAvRelationTool
 
++ (NSString *)czh_getLocalPathWithFileUrl:(NSString *)fileUrl ext:(NSString *) ext{
+    NSString *fileName = [[NSString alloc] initWithFormat:@"video_%@.%@",[fileUrl lastPathComponent],ext];
+//    NSString *localPath = [CZHFileManager czh_voiceUrlIsExistInLocalWithLastPathComponent:fileName];
+//    if (localPath.length <= 0) {
+    NSString * localPath = [CZHFileManager czh_saveFileWithURL:fileUrl withFileName:fileName];
+//    }
+    return localPath;
+}
+
 + (NSString *)czh_getLocalPathWithVoiceUrl:(NSString *)voiceUrl {
     
     NSString *lastPath = [voiceUrl lastPathComponent];

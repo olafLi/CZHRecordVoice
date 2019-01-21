@@ -18,6 +18,7 @@
 + (BOOL)czh_removeFile:(NSString *)filePath;
 ///转换本地wav为本地amr
 //+ (NSString *)czh_convertWavtoAMRWithVoiceFilePath:(NSString *)voiceFilePath;
++ (NSString*)czh_saveFileWithURL:(NSString *)fileUrl withFileName:(NSString *)fileName;
 ///把网络地址保存到本地
 + (NSString *)czh_saveWavWithVoiceUrl:(NSString *)voiceUrl;
 ///转换本地amr为wav本地音频

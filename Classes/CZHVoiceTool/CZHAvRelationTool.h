@@ -11,6 +11,7 @@
 
 @interface CZHAvRelationTool : NSObject
 
++ (NSString *)czh_getLocalPathWithFileUrl:(NSString *)fileUrl ext:(NSString *) ext;
 /**
  * 判断网络语音在本地存不存在
  */
